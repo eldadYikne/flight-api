@@ -10,7 +10,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DataSource } from 'typeorm';
 import { IntervalService } from './interval/interval.service';
 import { FlightService } from './flight/flight.service';
-
 const ormOptions: TypeOrmModuleOptions = {
   host: 'nestjsdb.cduq4k0kqzc0.eu-north-1.rds.amazonaws.com',
   type: 'mysql',
@@ -28,8 +27,8 @@ const ormOptions: TypeOrmModuleOptions = {
     FlightModule,
     AirportModule,
     ConfigModule.forRoot({
-      isGlobal: true, // This makes the config available globally
-      envFilePath: '.env', // Path to your .env file
+      isGlobal: true,
+      envFilePath: '.env',
     }),
   ],
   controllers: [AppController],

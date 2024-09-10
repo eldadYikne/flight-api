@@ -9,8 +9,8 @@ import {
 import { Server } from 'socket.io';
 @WebSocketGateway({
   cors: {
-    origin: 'https://flight-front.onrender.com/#/',
-    // origin: 'http://localhost:4200',
+    // origin: process.env.API_URL,
+    origin: 'http://localhost:4200',
     credentials: true,
   },
 })
