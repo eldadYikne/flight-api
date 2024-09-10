@@ -179,10 +179,8 @@ export class FlightService {
         }
       }
 
-      // Save the updated flight
       await this.repoFlights.save(flightToUpdate);
 
-      // Emit event to inform clients about the update
       this.sockect.emitFlights({ id: flightToUpdate.id });
 
       return flightToUpdate;
@@ -193,11 +191,10 @@ export class FlightService {
   }
   private addMinutesToTime(time: string, minutes: number): string {
     const [hours, minutesStr] = time.split(':').map(Number);
-    const totalMinutes = hours * 60 + minutesStr + minutes; // Total minutes
-    const newHours = Math.floor(totalMinutes / 60) % 24; // Wrap around to 24-hour format
+    const totalMinutes = hours * 60 + minutesStr + minutes;
+    const newHours = Math.floor(totalMinutes / 60) % 24;
     const newMinutes = totalMinutes % 60;
 
-    // Format back to HH:mm
     return `${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}`;
   }
 
@@ -205,8 +202,7 @@ export class FlightService {
   startInterval() {
     this.intervalId = setInterval(() => {
       this.updateRandomFlight();
-      //   console.log('interval ');
-    }, 3000); // Executes every 1 second (1000 milliseconds)
+    }, 1000);
   }
 
   stopInterval() {

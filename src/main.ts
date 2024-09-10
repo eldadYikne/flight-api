@@ -5,7 +5,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
   app.enableCors({
-    origin: 'http://localhost:4200', // Replace with your Angular app's URL
+    // origin: 'http://localhost:4200',
+    origin: 'https://flight-front.onrender.com/#/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });

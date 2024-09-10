@@ -9,7 +9,8 @@ import {
 import { Server } from 'socket.io';
 @WebSocketGateway({
   cors: {
-    origin: 'http://localhost:4200', // Allow requests from your Angular app (update if necessary)
+    origin: 'https://flight-front.onrender.com/#/',
+    // origin: 'http://localhost:4200',
     credentials: true,
   },
 })
