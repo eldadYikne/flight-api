@@ -206,7 +206,7 @@ export class FlightService {
     this.intervalId = setInterval(() => {
       this.updateRandomFlight();
       //   console.log('interval ');
-    }, 300); // Executes every 1 second (1000 milliseconds)
+    }, 3000); // Executes every 1 second (1000 milliseconds)
   }
 
   stopInterval() {
