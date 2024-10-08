@@ -10,20 +10,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DataSource } from 'typeorm';
 import { IntervalService } from './interval/interval.service';
 import { FlightService } from './flight/flight.service';
-const ormOptions: TypeOrmModuleOptions = {
-  host: 'nestjsdb.cduq4k0kqzc0.eu-north-1.rds.amazonaws.com',
-  type: 'mysql',
-  port: 3306,
-  username: 'admin',
-  password: 'Nest123456',
-  database: 'nestjsDB',
-  autoLoadEntities: true,
-  synchronize: false,
-};
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(ormOptions),
+    // TypeOrmModule.forRoot(ormOptions),
     FlightModule,
     AirportModule,
     ConfigModule.forRoot({
