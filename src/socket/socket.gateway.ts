@@ -6,10 +6,10 @@ import {
   OnGatewayInit,
   WebSocketServer,
 } from '@nestjs/websockets';
+import { ConfigService } from '@nestjs/config';
 import { Server } from 'socket.io';
 @WebSocketGateway({
   cors: {
-    // origin: process.env.API_URL,
     origin: 'http://localhost:4200',
     credentials: true,
   },
